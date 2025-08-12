@@ -1,6 +1,6 @@
 This script is designed to perform the following validation checks on network devices:
 
-**Hostname Verification** – Ensures the correct hostname is configured on each device.
+**Hostname Verification** – Retrieves hostname is configured on each device.
 
 **Catalyst Center Enterprise IP Reachability** – Verifies that devices (Switches, Routers, WLCs, etc.) can reach the specified Catalyst Center IP address.
 
