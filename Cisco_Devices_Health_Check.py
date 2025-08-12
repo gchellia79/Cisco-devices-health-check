@@ -1,3 +1,4 @@
+
 import yaml
 import csv
 import os
@@ -47,10 +48,10 @@ def get_hostname(connection):
 def main():
     # Load YAML
     try:
-        with open("/Users/gchellia/Documents/CSS/Automation/pod2_devices.yaml", "r") as file:
+        with open("pod_devices.yaml", "r") as file:
             config = yaml.safe_load(file)
     except FileNotFoundError:
-        print("Error: YAML file 'pod2_devices.yaml' not found.")
+        print("Error: YAML file 'pod_devices.yaml' not found.")
         return
     except yaml.YAMLError as e:
         print(f"Error parsing YAML: {e}")
@@ -63,11 +64,11 @@ def main():
 
     # Prepare CSV output
     timestamp_str = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    log_dir = "pod2_health_check_logs"
+    log_dir = "POD_health_check_logs"
     os.makedirs(log_dir, exist_ok=True)
-    POD2_HEALTH_CHECK = f"{log_dir}/POD2_HEALTH_CHECK_{timestamp_str}.csv"
+    POD_HEALTH_CHECK = f"{log_dir}/POD_HEALTH_CHECK_{timestamp_str}.csv"
 
-    with open(POD2_HEALTH_CHECK, mode="w", newline="") as csvfile:
+    with open(POD_HEALTH_CHECK, mode="w", newline="") as csvfile:
         fieldnames = [
             "Switch Name", "Configured Hostname", "IP",
             "Catalyst Center Reachability", "Interface",
@@ -146,7 +147,7 @@ def main():
 
             connection.disconnect()
 
-    print(f"\n✅ Interface status written to: {POD2_HEALTH_CHECK}")
+    print(f"\n Interface status written to: {POD_HEALTH_CHECK}")
     print(f"🔍 Summary: {success_count} switches reachable, {fail_count} failed to connect.")
 
 if __name__ == "__main__":
