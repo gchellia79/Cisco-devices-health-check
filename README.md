@@ -9,26 +9,3 @@ This script is designed to perform the following validation checks on network de
 **SNMP Read-Only Community** – Confirms that the SNMP RO community string is correctly configured.
 
 All required variables are provided via a YAML configuration file.
-
-Sample Yaml file
-
-  - name: switch-1
-    ip: <ip-address of switch-1>
-    device_type: cisco_ios
-    username: <username>
-    password: <password>
-    ping_ip: <Catalyst-Center enterprise IP address>
-    interfaces:
-      - Te1/1/2
-      - Te1/1/1
-   
-
-  - name: switch-2
-    ip: <ip-address of switch-2>
-    device_type: cisco_ios
-    username: <username>
-    password: <password>
-    ping_ip: <Catalyst-Center enterprise IP address>
-    interfaces:
-      - Te1/1/2
-      - Te1/1/1
