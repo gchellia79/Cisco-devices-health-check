@@ -9,3 +9,9 @@ This script is designed to perform the following validation checks on network de
 **SNMP Read-Only Community** – Confirms that the SNMP RO community string is correctly configured.
 
 All required variables are provided via a YAML configuration file.
+
+**Output**
+
+Test results are saved in a timestamped CSV file.
+
+A dedicated directory(POD_health_check_logs) is created to store the output for each run.
